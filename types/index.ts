@@ -19,7 +19,7 @@ export interface CarProps{
     city_mpg: number;
     class: string;
     combination_mpg: number;
-    cylinders: number;
+    cylinders: string;
     displacement: number;
     drive: string;
     fuel_type: string;
@@ -28,4 +28,39 @@ export interface CarProps{
     model: string;
     transmission: string;
     year: number;
+}
+
+export interface FilterProps{
+    manufacturer: string;
+    model: string;
+    fuel: number;
+    limit: number;
+    year: number;
+}
+
+interface OptionProps{
+    title: string;
+    value: string;
+}
+
+export interface CustomFilterProps{
+    title: string;
+    options: OptionProps[]
+    setFilter: (param: any) => void
+}
+
+export interface ShowMoreProps{
+    pageNumber: number;
+    isNext: boolean;
+    setLimit: any;
+}
+
+export interface SearchManufacturerProps{
+    selected: string;
+    setSelected: () => void
+}
+
+export interface SearchBarProps{
+    setManufacturer: (param: string) => void
+    setModel: (param: string) => void
 }
